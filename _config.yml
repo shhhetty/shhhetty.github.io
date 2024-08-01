@@ -1,0 +1,8 @@
+# _config.yml
+title: "Your Site Title"
+description: "A description of your site"
+baseurl: "" # leave this as an empty string for root
+url: "https://github.com/shhhetty/shhhetty.github.io" # replace with your GitHub Pages URL
+
+# Build settings
+destination: ./docs
