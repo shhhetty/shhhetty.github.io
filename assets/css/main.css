@@ -3890,3 +3890,29 @@ ul.feature-icons li.icon:before {
 	font-size: 1.5rem; /* A good size for the icons */
 	line-height: 3.25rem; /* This vertically centers the icon */
 }
+
+/* === DEFINITIVE FIX FOR FEATURE ICONS === */
+/* ADD THIS ENTIRE BLOCK TO THE VERY END OF assets/css/main.css */
+
+/* 1. Remove the conflicting hexagon background from all feature icons */
+ul.feature-icons li:before {
+	background-image: none !important;
+}
+
+/* 2. Force the list items to use the Font Awesome font and style them */
+ul.feature-icons li.icon.solid:before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	font-size: 1.5rem;
+	line-height: 3.25rem; /* This vertically centers the icon from the original template */
+}
+
+/* 3. Assign the correct icon character to each list item using a more specific rule */
+ul.feature-icons li.fa-code:before { content: '\f121'; }
+ul.feature-icons li.fa-brain:before { content: '\f5dc'; }
+ul.feature-icons li.fa-terminal:before { content: '\f120'; }
+ul.feature-icons li.fa-database:before { content: '\f1c0'; }
+ul.feature-icons li.fa-check-double:before { content: '\f560'; }
+ul.feature-icons li.fa-sitemap:before { content: '\f0e8'; }
+ul.feature-icons li.fa-cloud:before { content: '\f0c2'; }
+ul.feature-icons li.fa-chart-bar:before { content: '\f080'; }
