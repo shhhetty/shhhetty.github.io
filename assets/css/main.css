@@ -3880,3 +3880,13 @@ input, select, textarea {
 		}
 
 	}
+
+
+ul.feature-icons li.icon:before {
+	content: ''; /* Allows Font Awesome to take over */
+	background-image: none !important; /* REMOVES the conflicting hexagon */
+	font-family: 'Font Awesome 5 Free'; /* Re-applies the correct font family */
+	font-weight: 900; /* This is for the 'solid' icon style */
+	font-size: 1.5rem; /* A good size for the icons */
+	line-height: 3.25rem; /* This vertically centers the icon */
+}
