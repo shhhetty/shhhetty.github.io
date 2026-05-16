@@ -4,8 +4,8 @@
 		<title>Satvik Shetty - Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Satvik Shetty's portfolio showcasing projects in Machine Learning, QA Automation, and Data Engineering." />
-		<meta name="keywords" content="Machine Learning, Python, Automation, Data Science, Portfolio" />
+		<meta name="description" content="Satvik Shetty — Generative AI Engineer specialising in LangGraph agentic pipelines, LLM fine-tuning, RAG, and AI-driven automation." />
+		<meta name="keywords" content="Generative AI, LangGraph, LLM Fine-Tuning, RAG, Agentic Workflows, Python, Automation, Portfolio" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -17,13 +17,12 @@
 					<section class="intro">
 						<header>
 							<h1>Satvik Shetty</h1>
-							<p>ML & Automation Engineer</p>
+							<p>Generative AI Engineer</p>
 							<ul class="actions">
 								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
 						</header>
 						<div class="content">
-							<!-- TODO: Replace with a professional background image (e.g., abstract tech, code) -->
 							<span class="image fill" data-position="center"><img src="images/background.jpg" alt="Portfolio Background" /></span>
 						</div>
 					</section>
@@ -34,8 +33,7 @@
 							<h2>About Me</h2>
 						</header>
 						<div class="content">
-							<p>I am a passionate and results-oriented engineer specializing in building intelligent, automated solutions to solve complex business problems. With a strong foundation in <strong>machine learning, data engineering, and process automation</strong>, I create efficient, scalable, and impactful systems. My experience spans from fine-tuning Large Language Models (LLMs) to developing end-to-end QA automation pipelines that save significant time and resources.</p>
-							<!-- TODO: Replace with a professional headshot -->
+							<p>Generative AI Engineer with 2+ years of hands-on experience delivering production-grade LLM systems, agentic AI workflows, and RAG architectures — with full lifecycle ownership from requirements to deployment. I specialise in <strong>LangChain/LangGraph orchestration, FAISS vector search, multi-model routing, and LLM fine-tuning with RLHF</strong>. Most recently I built a fully automated 14-node agentic pipeline that eliminated all manual team handoffs and cut processing time from hours to ~25 minutes.</p>
 							<span class="image main"><img src="images/avatar.jpg" alt="Satvik Shetty" /></span>
 						</div>
 					</section>
@@ -46,16 +44,18 @@
 							<h2>Core Skills</h2>
 						</header>
 						<div class="content">
-							<p>I am proficient in a variety of technologies across the full project lifecycle, from data scraping and analysis to model deployment and automation.</p>
-					        <ul class="feature-icons">
-					            <li class="icon solid fa-code">Python</li>
-					            <li class="icon solid fa-brain">Machine Learning</li>
-					            <li class="icon solid fa-terminal">Prompt Engineering</li>
-					            <li class="icon solid fa-database">Data Engineering & ETL</li>
-					            <li class="icon solid fa-check-double">QA Automation</li>
-					            <li class="icon solid fa-sitemap">API Integration</li>
-					            <li class="icon solid fa-cloud">Cloud Deployment</li>
-					            <li class="icon solid fa-chart-bar">Pandas & Data Analysis</li>
+							<p>Across the full AI engineering lifecycle — from data collection and model fine-tuning to production deployment and evaluation.</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-project-diagram">LangChain / LangGraph</li>
+								<li class="icon solid fa-brain">LLM Fine-Tuning & RLHF</li>
+								<li class="icon solid fa-search">RAG & Vector Search (FAISS)</li>
+								<li class="icon solid fa-robot">Agentic Workflows</li>
+								<li class="icon solid fa-terminal">Prompt Engineering</li>
+								<li class="icon solid fa-code">Python</li>
+								<li class="icon solid fa-database">Data Engineering & ETL</li>
+								<li class="icon solid fa-spider">Web Scraping (Playwright / DrissionPage)</li>
+								<li class="icon solid fa-check-double">QA Automation</li>
+								<li class="icon solid fa-cloud">Cloud & APIs (AWS, OpenAI, Anthropic, Gemini)</li>
 							</ul>
 						</div>
 					</section>
@@ -66,18 +66,76 @@
 							<h2>My Work & Projects</h2>
 						</header>
 						<div class="content">
-							<p>Here are some of the key projects I've developed. Each one represents a unique challenge and demonstrates my ability to deliver effective technical solutions.</p>
+							<p>Production systems and personal projects spanning agentic AI pipelines, LLM fine-tuning, retail web scraping, and full-stack development.</p>
 
-							<!-- Project 1: QA Sheet Automation -->
+							<!-- Project: QA Orchestrator -->
+								<section>
+									<header>
+										<h3>QA Orchestrator — 14-Node Agentic LangGraph Pipeline</h3>
+										<p>Engineered a fully automated, end-to-end keyword QA pipeline as a 14-node LangGraph StateGraph, eliminating 4–5 manual handoffs between QA and Data teams. The pipeline covers keyword staging, product count fetching, sensicality scoring, search-volume retrieval, FAISS-based duplicate detection, assortment scoring with an LLM-as-a-judge, CLP cannibalization checks, page regeneration, and final export — all in ~25 minutes vs. hours across two teams.</p>
+										<p>Key engineering: conditional guard edges, MemorySaver crash-resumability, human-in-the-loop interrupt gate, FAISS cosine similarity search over 40,000+ CLP keywords (ada-002 embeddings), async DataForSEO SERP polling, and a YAML-driven retailer config system requiring zero code changes to onboard new retailers.</p>
+										<p><strong>Technologies:</strong> Python, LangGraph StateGraph, FAISS, OpenAI API, Anthropic API, DataForSEO API, aiohttp, Pandas</p>
+									</header>
+									<div class="content">
+										<ul class="actions">
+											<li><a href="https://github.com/shhhetty/qa-orchestrator" target="_blank" class="button primary">View on GitHub</a></li>
+										</ul>
+									</div>
+								</section>
+
+							<!-- Project: QA Tools -->
+								<section>
+									<header>
+										<h3>QA Tools — Multi-Retailer Keyword QA Streamlit App</h3>
+										<p>A comprehensive Streamlit application providing a suite of keyword QA tools across 50+ retail clients. Features include: product count fetching, semantic keyword validation, spell checking, URL redirect checking, keyword deduplication, assortment validation, title validation, colour identification, and Snowflake-backed page regeneration checks. Retailer behaviour is entirely config-driven via per-retailer YAML files and a pluggable parser architecture.</p>
+										<p><strong>Technologies:</strong> Python, Streamlit, LangChain, OpenAI API, Snowflake, aiohttp, spaCy, Pandas</p>
+									</header>
+									<div class="content">
+										<ul class="actions">
+											<li><a href="https://github.com/shhhetty/qa-tools" target="_blank" class="button primary">View on GitHub</a></li>
+										</ul>
+									</div>
+								</section>
+
+							<!-- Project: LLM Fine-Tuning Suite -->
+								<section>
+									<header>
+										<h3>LLM Fine-Tuning Suite — Sensicality & Duplicate Classification</h3>
+										<p>Multiple GPT-4.1-mini fine-tuning projects targeting retail search QA. Includes: sensicality classifiers (per retailer vertical — fashion, footwear, electronics) that score whether a keyword makes a valid category landing page title; and a keyword duplicate classifier that detects whether two keywords share the same user search intent. Models trained on labeled historical datasets achieve ~90% alignment with human ground truth. Inference scripts use 50-worker parallel ThreadPoolExecutor for high-throughput batch processing.</p>
+										<p><strong>Technologies:</strong> Python, OpenAI Fine-Tuning API, GPT-4.1-mini, Pandas, JSONL, ThreadPoolExecutor</p>
+									</header>
+									<div class="content">
+										<ul class="actions">
+											<li><a href="https://github.com/shhhetty/keyword-duplicate-classifier" target="_blank" class="button primary">Duplicate Classifier</a></li>
+											<li><a href="https://github.com/shhhetty/sensical_finetune" target="_blank" class="button primary">Sensicality Finetune</a></li>
+											<li><a href="https://github.com/shhhetty/sensical_modelbased" target="_blank" class="button primary">Model-Based Inference</a></li>
+										</ul>
+									</div>
+								</section>
+
+							<!-- Project: Retail Scrapers -->
+								<section>
+									<header>
+										<h3>Retail CLP Scraping Pipelines</h3>
+										<p>A collection of Playwright and DrissionPage scraping pipelines built to crawl retailer Category Landing Pages (CLPs), programmatically generate filter combinations, extract product IDs per filtered URL, and verify noindex status. Covers Dillards, David Jones, VinceCamuto, PetSupermarket, SnapAV, Soma, and more. Each retailer has a dedicated scraper handling that site's anti-bot measures, filter parameter encoding, and pagination — outputting structured JSONL/CSV for downstream staging pipelines.</p>
+										<p><strong>Technologies:</strong> Python, Playwright, DrissionPage, BeautifulSoup, asyncio, JSONL</p>
+									</header>
+									<div class="content">
+										<ul class="actions">
+											<li><a href="https://github.com/shhhetty/retail-scrapers" target="_blank" class="button primary">View on GitHub</a></li>
+										</ul>
+									</div>
+								</section>
+
+							<!-- Project: QA Sheet Automation -->
 								<section>
 									<header>
 										<h3>QA Sheet Generation Service</h3>
-										<p>Developed an automation framework in Google Apps Script that reduces the 15-minute manual process of creating QA test sheets to a single click. The tool aggregates data from multiple source sheets and uses an asynchronous job system to integrate with an external API, fetching product counts for thousands of keywords in the background and significantly boosting the QA team's efficiency.</p>
+										<p>An automation framework in Google Apps Script that reduces the 15-minute manual process of creating QA test sheets to a single click. Aggregates data from multiple source sheets and uses an asynchronous job system to integrate with an external API, fetching product counts for thousands of keywords in the background.</p>
 										<p><strong>Technologies:</strong> Google Apps Script, Python, Flask, Pandas, Google Sheets API, Render</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<!-- TODO: Replace with a screenshot or graphic for this project -->
 											<a class="landscape"><img src="images/project_qa_demo_2.gif" alt="QA Sheet Automation Demo" /></a>
 										</div>
 										<ul class="actions">
@@ -86,16 +144,15 @@
 									</div>
 								</section>
 
-							<!-- Project 2: Data & Prompt Engineering Pipeline -->
+							<!-- Project: Data Prep Pipeline -->
 								<section>
 									<header>
 										<h3>Data Preparation Pipeline for Specialized AI</h3>
-										<p>Developed a Python tool to bridge the gap between raw product data and specialized Gemini LLMs. The application functions as an automated data pre-processor, using retailer-specific JSON configurations to parse large CSVs and extract only the required product attributes. It generates clean, structured data payloads that are custom-fit for different AI models, each trained to score assortment quality on a unique set of inputs. This automation is key to enabling fast, scalable, and consistent AI-driven QA.</p>
+										<p>A Python tool that bridges raw product data and specialised LLMs. Uses retailer-specific JSON configurations to parse large CSVs and extract only the required product attributes, generating clean structured data payloads custom-fit for different AI models — each trained to score assortment quality on a unique set of inputs.</p>
 										<p><strong>Technologies:</strong> Python, Pandas, Streamlit, JSON</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<!-- TODO: Replace with a screenshot or graphic for this project -->
 											<a class="landscape"><img src="images/project_demo_data.gif" alt="Data & Prompt Engineering Pipeline" /></a>
 										</div>
 										<ul class="actions">
@@ -104,16 +161,15 @@
 									</div>
 								</section>
 
-							<!-- Project 3: Assortment Validator -->
+							<!-- Project: Assortment Validator -->
 								<section>
 									<header>
 										<h3>Automated Assortment Validator</h3>
-										<p>A QA automation tool built with Python, Streamlit, and Requests to validate the relevance of search results directly via an API. It ensures product data matches the required keywords and concepts. This tool automated a critical manual process, reducing testing time by over 95% and improving data accuracy.</p>
-										<p><strong>Technologies:</strong> Python, Streamlit, Pandas, QA Automation, Web Scraping</p>
+										<p>A QA automation tool that validates the relevance of search results directly via API, ensuring product data matches required keywords and concepts. Reduced testing time by over 95% and improved data accuracy by automating a previously manual validation process.</p>
+										<p><strong>Technologies:</strong> Python, Streamlit, Pandas, Requests</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<!-- TODO: Replace with a screenshot or graphic for this project -->
 											<a class="landscape"><img src="images/project_demo_asst.gif" alt="Assortment Validator" /></a>
 										</div>
 										<ul class="actions">
@@ -122,24 +178,20 @@
 									</div>
 								</section>
 
-							<!-- Project 4: Sensical Finetuning & Modelbased -->
+							<!-- Project: RideBaazi -->
 								<section>
 									<header>
-										<h3>LLM Fine-Tuning & Classification</h3>
-										<p>Executed projects to fine-tune a Large Language Model to generate more sensical, context-aware responses and built a model-based system for keyword classification. These projects involved the full ML workflow: data preparation, model training, fine-tuning, and inference.</p>
-										<p><strong>Technologies:</strong> Python, Machine Learning, LLM Fine-Tuning, Pandas, JSONL</p>
+										<h3>RideBaazi — Motorcycle Community App <span style="font-weight:400; font-size:0.85em;">(Personal · In Progress)</span></h3>
+										<p>A full-stack social platform for motorcycle riders, independently designed and built end-to-end. Features GPS ride tracking, ride scheduling with join-request approval workflows, admin-controlled community groups, a marketplace, and real-time messaging. Started with Gemini AI Studio and actively being developed locally.</p>
+										<p><strong>Technologies:</strong> React 19, TypeScript, Vite 6, Tailwind CSS 4, Firebase (Auth + Firestore), Zustand, React Leaflet</p>
 									</header>
 									<div class="content">
-										<div class="gallery">
-											<!-- TODO: Replace with a screenshot or graphic for this project -->
-											<a class="landscape"><img src="images/project_llm.jpg" alt="LLM Finetuning" /></a>
-										</div>
 										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/sensical_finetune" target="_blank" class="button primary">Finetune Repo</a></li>
-											<li><a href="https://github.com/shhhetty/sensical_modelbased" target="_blank" class="button primary">Modelbased Repo</a></li>
+											<li><a href="https://github.com/shhhetty/ridebaazi" target="_blank" class="button primary">View on GitHub</a></li>
 										</ul>
 									</div>
 								</section>
+
 						</div>
 					</section>
 
@@ -149,13 +201,13 @@
 							<h2>Get In Touch</h2>
 						</header>
 						<div class="content">
-							<p>I'm actively seeking new opportunities and am open to discussing projects, collaborations, or roles where I can contribute my skills. Please feel free to reach out.</p>
+							<p>I'm actively seeking new opportunities and open to discussing roles, projects, or collaborations in Generative AI and AI automation. Feel free to reach out.</p>
 						</div>
 						<footer>
 							<ul class="items">
 								<li>
 									<h3>Email</h3>
-									<a href="satvikshetty24@gmail.com">satvikshetty24@gmail.com</a>
+									<a href="mailto:satvikshetty24@gmail.com">satvikshetty24@gmail.com</a>
 								</li>
 								<li>
 									<h3>Elsewhere</h3>
@@ -187,8 +239,3 @@
 	</body>
 
 </html>
-
-
-
-
-
