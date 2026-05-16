@@ -1,256 +1,558 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Satvik Shetty - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Satvik Shetty — Generative AI Engineer specialising in LangGraph agentic pipelines, LLM fine-tuning, RAG, and AI-driven automation." />
-		<meta name="keywords" content="Generative AI, LangGraph, LLM Fine-Tuning, RAG, Agentic Workflows, Python, Automation, Portfolio" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satvik Shetty — Generative AI Engineer</title>
+  <meta name="description" content="Satvik Shetty — Generative AI Engineer specialising in LangGraph agentic pipelines, LLM fine-tuning, RAG, and AI-driven automation.">
+  <meta name="keywords" content="Generative AI, LangGraph, LLM Fine-Tuning, RAG, Agentic Workflows, Python, Automation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    /* ── Tokens ── */
+    :root {
+      --bg:        #0d1117;
+      --bg-card:   #161b22;
+      --border:    #30363d;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --teal:      #00b4d8;
+      --green:     #00e5a0;
+      --purple:    #a78bfa;
+      --orange:    #fb923c;
+      --blue:      #58a6ff;
+      --radius:    12px;
+      --ease:      0.18s ease;
+    }
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>Satvik Shetty</h1>
-							<p>Generative AI Engineer</p>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/background.jpg" alt="Portfolio Background" /></span>
-						</div>
-					</section>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-				<!-- Section: About Me -->
-					<section id="first">
-						<header>
-							<h2>About Me</h2>
-						</header>
-						<div class="content">
-							<p>Generative AI Engineer with 2.5+ years of hands-on experience delivering production-grade LLM systems, agentic AI workflows, and RAG architectures — with full lifecycle ownership from requirements to deployment. I specialise in <strong>LangChain/LangGraph orchestration, FAISS vector search, multi-model routing, and LLM fine-tuning with RLHF</strong>. Most recently I built a fully automated 14-node agentic pipeline that eliminated all manual team handoffs and cut processing time from hours to ~25 minutes.</p>
-							<span class="image main"><img src="images/avatar.jpg" alt="Satvik Shetty" /></span>
-						</div>
-					</section>
+    /* ── Layout helpers ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 88px 0; }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 1.9rem; font-weight: 700; margin-bottom: 2.5rem; letter-spacing: -0.3px;
+    }
+    .divider { border: none; border-top: 1px solid var(--border); }
 
-				<!-- Section: Core Skills -->
-					<section>
-						<header>
-							<h2>Core Skills</h2>
-						</header>
-						<div class="content">
-							<p>Across the full AI engineering lifecycle — from data collection and model fine-tuning to production deployment and evaluation.</p>
-							<ul class="feature-icons">
-								<li class="icon solid fa-project-diagram">LangChain / LangGraph</li>
-								<li class="icon solid fa-brain">LLM Fine-Tuning & RLHF</li>
-								<li class="icon solid fa-search">RAG & Vector Search (FAISS)</li>
-								<li class="icon solid fa-robot">Agentic Workflows</li>
-								<li class="icon solid fa-terminal">Prompt Engineering</li>
-								<li class="icon solid fa-code">Python</li>
-								<li class="icon solid fa-database">Data Engineering & ETL</li>
-								<li class="icon solid fa-spider">Web Scraping (Playwright / DrissionPage)</li>
-								<li class="icon solid fa-check-double">QA Automation</li>
-								<li class="icon solid fa-cloud">Cloud & APIs (AWS, OpenAI, Anthropic, Gemini)</li>
-							</ul>
-						</div>
-					</section>
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 60px;
+      background: rgba(13,17,23,0.82); backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--ease);
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+    .nav-logo { font-weight: 700; font-size: 0.95rem; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--muted); font-weight: 500; transition: color var(--ease); }
+    .nav-links a:hover { color: var(--text); }
 
-				<!-- Section: Projects -->
-					<section>
-						<header>
-							<h2>My Work & Projects</h2>
-						</header>
-						<div class="content">
-							<p>Production systems and personal projects spanning agentic AI pipelines, LLM fine-tuning, retail web scraping, and full-stack development.</p>
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 60px; position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, #30363d 1px, transparent 1px);
+      background-size: 30px 30px; opacity: 0.35;
+    }
+    #hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 45%, rgba(0,180,216,.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 75%, rgba(167,139,250,.07) 0%, transparent 50%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 5rem; width: 100%;
+    }
+    .hero-text { flex: 1; min-width: 0; }
 
-							<!-- Project: QA Orchestrator -->
-								<section>
-									<header>
-										<h3>QA Orchestrator — 14-Node Agentic LangGraph Pipeline</h3>
-										<p>Engineered a fully automated, end-to-end keyword QA pipeline as a 14-node LangGraph StateGraph, eliminating 4–5 manual handoffs between QA and Data teams. The pipeline covers keyword staging, product count fetching, sensicality scoring, search-volume retrieval, FAISS-based duplicate detection, assortment scoring with an LLM-as-a-judge, CLP cannibalization checks, page regeneration, and final export — all in ~25 minutes vs. hours across two teams.</p>
-										<p>Key engineering: conditional guard edges, MemorySaver crash-resumability, human-in-the-loop interrupt gate, FAISS cosine similarity search over 40,000+ CLP keywords (ada-002 embeddings), async DataForSEO SERP polling, and a YAML-driven retailer config system requiring zero code changes to onboard new retailers.</p>
-										<p><strong>Technologies:</strong> Python, LangGraph StateGraph, FAISS, OpenAI API, Anthropic API, DataForSEO API, aiohttp, Pandas</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_qa_orchestrator.svg" alt="QA Orchestrator Pipeline Diagram" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/qa-orchestrator" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(0,180,216,.1); border: 1px solid rgba(0,180,216,.3);
+      border-radius: 20px; padding: 4px 14px;
+      font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 1.4rem;
+    }
+    .pulse {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
 
-							<!-- Project: QA Tools -->
-								<section>
-									<header>
-										<h3>QA Tools — Multi-Retailer Keyword QA Streamlit App</h3>
-										<p>A comprehensive Streamlit application providing a suite of keyword QA tools across 50+ retail clients. Features include: product count fetching, semantic keyword validation, spell checking, URL redirect checking, keyword deduplication, assortment validation, title validation, colour identification, and Snowflake-backed page regeneration checks. Retailer behaviour is entirely config-driven via per-retailer YAML files and a pluggable parser architecture.</p>
-										<p><strong>Technologies:</strong> Python, Streamlit, LangChain, OpenAI API, Snowflake, aiohttp, spaCy, Pandas</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_qa_tools.gif" alt="QA Tools Hub Demo" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/qa-tools" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    .hero-name {
+      font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700;
+      line-height: 1.12; letter-spacing: -0.5px; margin-bottom: 0.6rem;
+    }
+    .hero-role {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--teal); font-weight: 500; margin-bottom: 1.2rem;
+    }
+    .hero-bio {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+      max-width: 500px; margin-bottom: 2rem;
+    }
+    .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-							<!-- Project: LLM Fine-Tuning Suite -->
-								<section>
-									<header>
-										<h3>LLM Fine-Tuning Suite — Sensicality & Duplicate Classification</h3>
-										<p>Multiple GPT-4.1-mini fine-tuning projects targeting retail search QA. Includes: sensicality classifiers (per retailer vertical — fashion, footwear, electronics) that score whether a keyword makes a valid category landing page title; and a keyword duplicate classifier that detects whether two keywords share the same user search intent. Models trained on labeled historical datasets achieve ~90% alignment with human ground truth. Inference scripts use 50-worker parallel ThreadPoolExecutor for high-throughput batch processing.</p>
-										<p><strong>Technologies:</strong> Python, OpenAI Fine-Tuning API, GPT-4.1-mini, Pandas, JSONL, ThreadPoolExecutor</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_finetune.svg" alt="LLM Fine-Tuning Pipeline Diagram" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/keyword-duplicate-classifier" target="_blank" class="button primary">Duplicate Classifier</a></li>
-											<li><a href="https://github.com/shhhetty/sensical_finetune" target="_blank" class="button primary">Sensicality Finetune</a></li>
-											<li><a href="https://github.com/shhhetty/sensical_modelbased" target="_blank" class="button primary">Model-Based Inference</a></li>
-										</ul>
-									</div>
-								</section>
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; border: none; cursor: pointer;
+      transition: all var(--ease);
+    }
+    .btn-primary { background: var(--teal); color: #0d1117; }
+    .btn-primary:hover { background: #00ccee; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--muted); background: var(--bg-card); }
+    .btn-sm { padding: 6px 14px; font-size: 12px; border-radius: 6px; }
 
-							<!-- Project: Retail Scrapers -->
-								<section>
-									<header>
-										<h3>Retail CLP Scraping Pipelines</h3>
-										<p>A collection of Playwright and DrissionPage scraping pipelines built to crawl retailer Category Landing Pages (CLPs), programmatically generate filter combinations, extract product IDs per filtered URL, and verify noindex status. Covers Dillards, David Jones, VinceCamuto, PetSupermarket, SnapAV, Soma, and more. Each retailer has a dedicated scraper handling that site's anti-bot measures, filter parameter encoding, and pagination — outputting structured JSONL/CSV for downstream staging pipelines.</p>
-										<p><strong>Technologies:</strong> Python, Playwright, DrissionPage, BeautifulSoup, asyncio, JSONL</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_scrapers.svg" alt="Retail CLP Scraping Pipeline Diagram" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/retail-scrapers" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    /* ── Avatar ── */
+    .avatar-wrap { flex-shrink: 0; }
+    .avatar-ring {
+      width: 240px; height: 240px; border-radius: 50%; padding: 3px;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+    }
+    .avatar-ring img {
+      width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover; border: 3px solid var(--bg);
+    }
 
-							<!-- Project: QA Sheet Automation -->
-								<section>
-									<header>
-										<h3>QA Sheet Generation Service</h3>
-										<p>An automation framework in Google Apps Script that reduces the 15-minute manual process of creating QA test sheets to a single click. Aggregates data from multiple source sheets and uses an asynchronous job system to integrate with an external API, fetching product counts for thousands of keywords in the background.</p>
-										<p><strong>Technologies:</strong> Google Apps Script, Python, Flask, Pandas, Google Sheets API, Render</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_qa_demo_2.gif" alt="QA Sheet Automation Demo" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/qa_sheet_automation" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    /* ── Skills ── */
+    #skills { border-top: 1px solid var(--border); }
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .skill {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 7px 15px;
+      font-size: 13px; font-weight: 500;
+      transition: all var(--ease);
+    }
+    .skill:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,180,216,.05); }
+    .skill-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
 
-							<!-- Project: Data Prep Pipeline -->
-								<section>
-									<header>
-										<h3>Data Preparation Pipeline for Specialized AI</h3>
-										<p>A Python tool that bridges raw product data and specialised LLMs. Uses retailer-specific JSON configurations to parse large CSVs and extract only the required product attributes, generating clean structured data payloads custom-fit for different AI models — each trained to score assortment quality on a unique set of inputs.</p>
-										<p><strong>Technologies:</strong> Python, Pandas, Streamlit, JSON</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_demo_data.gif" alt="Data & Prompt Engineering Pipeline" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/datafetch_forLLM" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    /* ── Projects ── */
+    #projects { border-top: 1px solid var(--border); }
 
-							<!-- Project: Assortment Validator -->
-								<section>
-									<header>
-										<h3>Automated Assortment Validator</h3>
-										<p>A QA automation tool that validates the relevance of search results directly via API, ensuring product data matches required keywords and concepts. Reduced testing time by over 95% and improved data accuracy by automating a previously manual validation process.</p>
-										<p><strong>Technologies:</strong> Python, Streamlit, Pandas, Requests</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_demo_asst.gif" alt="Assortment Validator" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/assortment_validator" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
 
-							<!-- Project: RideBaazi -->
-								<section>
-									<header>
-										<h3>RideBaazi — Motorcycle Community App <span style="font-weight:400; font-size:0.85em;">(Personal · In Progress)</span></h3>
-										<p>A full-stack social platform for motorcycle riders, independently designed and built end-to-end. Features GPS ride tracking, ride scheduling with join-request approval workflows, admin-controlled community groups, a marketplace, and real-time messaging. Started with Gemini AI Studio and actively being developed locally.</p>
-										<p><strong>Technologies:</strong> React 19, TypeScript, Vite 6, Tailwind CSS 4, Firebase (Auth + Firestore), Zustand, React Leaflet</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a class="landscape"><img src="images/project_ridebaazi.gif" alt="RideBaazi App Demo" /></a>
-										</div>
-										<ul class="actions">
-											<li><a href="https://github.com/shhhetty/ridebaazi" target="_blank" class="button primary">View on GitHub</a></li>
-										</ul>
-									</div>
-								</section>
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--ease), box-shadow var(--ease);
+    }
+    .card:hover {
+      border-color: #444d56;
+      box-shadow: 0 4px 24px rgba(0,0,0,.4);
+    }
 
-						</div>
-					</section>
+    /* Featured card spans both columns */
+    .card.span2 { grid-column: 1 / -1; }
 
-				<!-- Section: Contact -->
-					<section>
-						<header>
-							<h2>Get In Touch</h2>
-						</header>
-						<div class="content">
-							<p>I'm actively seeking new opportunities and open to discussing roles, projects, or collaborations in Generative AI and AI automation. Feel free to reach out.</p>
-						</div>
-						<footer>
-							<ul class="items">
-								<li>
-									<h3>Email</h3>
-									<a href="mailto:satvikshetty24@gmail.com">satvikshetty24@gmail.com</a>
-								</li>
-								<li>
-									<h3>Elsewhere</h3>
-									<ul class="icons">
-										<li>
-											<a href="https://www.linkedin.com/in/shhhetty/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
-										</li>
-										<li>
-											<a href="https://github.com/shhhetty" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a>
-										</li>
-										<li>
-											<a href="https://www.instagram.com/shhhetty/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</footer>
-					</section>
-			</div>
+    /* Media container — no fixed height, image fills naturally */
+    .card-media {
+      width: 100%;
+      background: #0a0e14;
+      border-bottom: 1px solid var(--border);
+      line-height: 0;   /* remove inline gap below img */
+    }
+    .card-media img {
+      width: 100%;
+      height: auto;     /* always natural aspect ratio — never crops */
+      display: block;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* Body */
+    .card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex: 1; display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+    .card-title { font-size: 1rem; font-weight: 700; line-height: 1.3; }
+    .card-title small { font-weight: 400; font-size: 0.82em; color: var(--muted); }
 
-	</body>
+    .badge {
+      flex-shrink: 0; font-size: 10px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px; letter-spacing: 0.4px; white-space: nowrap;
+    }
+    .badge-teal   { background: rgba(0,180,216,.13); color: var(--teal);   border: 1px solid rgba(0,180,216,.3); }
+    .badge-green  { background: rgba(0,229,160,.11); color: var(--green);  border: 1px solid rgba(0,229,160,.3); }
+    .badge-purple { background: rgba(167,139,250,.12); color: var(--purple); border: 1px solid rgba(167,139,250,.3); }
+    .badge-orange { background: rgba(251,146,60,.11); color: var(--orange); border: 1px solid rgba(251,146,60,.3); }
 
+    .card-desc { font-size: 13.5px; color: var(--muted); line-height: 1.75; flex: 1; }
+
+    .card-footer {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .tech-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace;
+      background: rgba(48,54,61,.6); color: var(--muted);
+      padding: 2px 9px; border-radius: 4px; border: 1px solid var(--border);
+    }
+    .card-links { display: flex; gap: 0.4rem; flex-shrink: 0; }
+
+    /* ── Contact ── */
+    #contact { border-top: 1px solid var(--border); text-align: center; }
+    .contact-body { color: var(--muted); max-width: 460px; margin: 0 auto 2.25rem; line-height: 1.8; }
+    .contact-links { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .contact-link {
+      display: flex; align-items: center; gap: 9px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 11px 22px;
+      font-size: 14px; font-weight: 500;
+      transition: all var(--ease);
+    }
+    .contact-link:hover {
+      border-color: var(--teal); color: var(--teal);
+      background: rgba(0,180,216,.05); transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 1.75rem 2rem;
+      text-align: center; color: var(--muted); font-size: 12px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .card.span2 { grid-column: 1; }
+    }
+    @media (max-width: 700px) {
+      .hero-inner { flex-direction: column-reverse; gap: 2rem; text-align: center; }
+      .hero-bio { max-width: 100%; }
+      .hero-cta { justify-content: center; }
+      .avatar-ring { width: 160px; height: 160px; }
+      .nav-links { display: none; }
+      .section-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="navbar">
+    <div class="nav-logo">satvik<span>.</span>shetty</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge"><span class="pulse"></span>Open to new opportunities</div>
+          <h1 class="hero-name">Satvik Shetty</h1>
+          <div class="hero-role">Generative AI Engineer</div>
+          <p class="hero-bio">2.5+ years building production-grade LLM systems, agentic pipelines, and RAG architectures — with full lifecycle ownership from requirements to deployment. Specialising in LangGraph orchestration, FAISS vector search, multi-model routing, and LLM fine-tuning.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="https://github.com/shhhetty" target="_blank" class="btn btn-ghost">GitHub</a>
+            <a href="https://www.linkedin.com/in/shhhetty/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+          </div>
+        </div>
+        <div class="avatar-wrap">
+          <div class="avatar-ring">
+            <img src="images/avatar.jpg" alt="Satvik Shetty">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section id="skills">
+    <div class="container">
+      <p class="eyebrow">Expertise</p>
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-wrap">
+        <div class="skill"><span class="skill-dot" style="background:var(--teal)"></span>LangChain / LangGraph</div>
+        <div class="skill"><span class="skill-dot" style="background:var(--purple)"></span>LLM Fine-Tuning &amp; RLHF</div>
+        <div class="skill"><span class="skill-dot" style="background:var(--green)"></span>RAG &amp; Vector Search (FAISS)</div>
+        <div class="skill"><span class="skill-dot" style="background:var(--orange)"></span>Agentic Workflows</div>
+        <div class="skill"><span class="skill-dot" style="background:var(--blue)"></span>Prompt Engineering</div>
+        <div class="skill"><span class="skill-dot" style="background:#f97316"></span>Python</div>
+        <div class="skill"><span class="skill-dot" style="background:#60a5fa"></span>Data Engineering &amp; ETL</div>
+        <div class="skill"><span class="skill-dot" style="background:#34d399"></span>Web Scraping (Playwright / DrissionPage)</div>
+        <div class="skill"><span class="skill-dot" style="background:#fbbf24"></span>QA Automation</div>
+        <div class="skill"><span class="skill-dot" style="background:#e879f9"></span>Cloud &amp; APIs (AWS, OpenAI, Anthropic, Gemini)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="container">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- QA Orchestrator — featured full-width -->
+        <div class="card span2">
+          <div class="card-media">
+            <img src="images/project_qa_orchestrator.svg" alt="QA Orchestrator 14-node LangGraph pipeline diagram">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">QA Orchestrator — 14-Node Agentic LangGraph Pipeline</h3>
+              <span class="badge badge-teal">Production</span>
+            </div>
+            <p class="card-desc">Fully automated end-to-end keyword QA pipeline as a 14-node LangGraph StateGraph, eliminating 4–5 manual handoffs between QA and Data teams. Covers keyword staging, product count fetching, sensicality scoring, search-volume retrieval, FAISS-based duplicate detection, assortment scoring with an LLM-as-a-judge, CLP cannibalization checks, page regeneration, and final export — all in ~25 minutes vs. hours across two teams.<br><br>Key engineering: conditional guard edges, MemorySaver crash-resumability, human-in-the-loop interrupt gate, FAISS cosine similarity over 40k+ CLP keywords (ada-002 embeddings), async DataForSEO SERP polling, and YAML-driven retailer config requiring zero code changes to onboard new retailers.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">LangGraph</span><span class="chip">FAISS</span><span class="chip">OpenAI</span>
+                <span class="chip">Anthropic</span><span class="chip">DataForSEO</span><span class="chip">aiohttp</span><span class="chip">Pandas</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/qa-orchestrator" target="_blank" class="btn btn-ghost btn-sm">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QA Tools -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_qa_tools.gif" alt="QA Tools Hub Demo">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">QA Tools — Multi-Retailer Keyword QA Streamlit App</h3>
+              <span class="badge badge-teal">Production</span>
+            </div>
+            <p class="card-desc">Comprehensive Streamlit app providing a suite of keyword QA tools across 50+ retail clients. Product count fetching, semantic keyword validation, spell checking, URL redirect checking, deduplication, assortment validation, and Snowflake-backed page regeneration checks. Entirely config-driven via per-retailer YAML files and a pluggable parser architecture.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">Streamlit</span><span class="chip">LangChain</span><span class="chip">OpenAI</span>
+                <span class="chip">Snowflake</span><span class="chip">spaCy</span><span class="chip">aiohttp</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/qa-tools" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LLM Fine-Tuning -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_finetune.svg" alt="LLM Fine-Tuning Pipeline Diagram">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">LLM Fine-Tuning Suite — Sensicality &amp; Duplicate Classification</h3>
+              <span class="badge badge-purple">Fine-Tuning</span>
+            </div>
+            <p class="card-desc">Multiple GPT-4.1-mini fine-tuning projects for retail search QA. Sensicality classifiers (fashion, footwear, electronics verticals) score whether a keyword makes a valid CLP title. A keyword duplicate classifier detects whether two keywords share the same search intent. Models achieve ~90% alignment with human ground truth. Inference via 50-worker parallel ThreadPoolExecutor for high-throughput batch processing.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">GPT-4.1-mini</span><span class="chip">Fine-Tuning API</span>
+                <span class="chip">JSONL</span><span class="chip">ThreadPoolExecutor</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/keyword-duplicate-classifier" target="_blank" class="btn btn-ghost btn-sm">Duplicate</a>
+                <a href="https://github.com/shhhetty/sensical_finetune" target="_blank" class="btn btn-ghost btn-sm">Sensicality</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retail Scrapers -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_scrapers.svg" alt="Retail CLP Scraping Pipeline Diagram">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Retail CLP Scraping Pipelines</h3>
+              <span class="badge badge-teal">Production</span>
+            </div>
+            <p class="card-desc">Playwright and DrissionPage scraping pipelines to crawl retailer Category Landing Pages, programmatically generate filter combinations, extract product IDs per filtered URL, and verify noindex status. Covers Dillards, David Jones, VinceCamuto, PetSupermarket, SnapAV, Soma, and more. Each retailer has a dedicated scraper handling anti-bot measures, filter encoding, and pagination — outputting structured JSONL/CSV for staging pipelines.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">Playwright</span><span class="chip">DrissionPage</span>
+                <span class="chip">BeautifulSoup</span><span class="chip">asyncio</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/retail-scrapers" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RideBaazi -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_ridebaazi.gif" alt="RideBaazi App Demo">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">RideBaazi — Motorcycle Community App <small>(In Progress)</small></h3>
+              <span class="badge badge-orange">Personal</span>
+            </div>
+            <p class="card-desc">Full-stack social platform for motorcycle riders, designed and built end-to-end. Features GPS ride tracking, ride scheduling with join-request approval workflows, admin-controlled community groups, a marketplace, and real-time messaging. Initially scaffolded with Gemini AI Studio, now actively developed locally.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">React 19</span><span class="chip">TypeScript</span>
+                <span class="chip">Firebase</span><span class="chip">Tailwind CSS</span><span class="chip">Zustand</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/ridebaazi" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QA Sheet Automation -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_qa_demo_2.gif" alt="QA Sheet Automation Demo">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">QA Sheet Generation Service</h3>
+              <span class="badge badge-teal">Production</span>
+            </div>
+            <p class="card-desc">Google Apps Script automation that reduces the 15-minute manual process of creating QA test sheets to a single click. Aggregates data from multiple source sheets and uses an async job system to fetch product counts for thousands of keywords via an external API in the background.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">Apps Script</span><span class="chip">Flask</span>
+                <span class="chip">Pandas</span><span class="chip">Sheets API</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/qa_sheet_automation" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Prep Pipeline -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_demo_data.gif" alt="Data Preparation Pipeline">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Data Preparation Pipeline for Specialized AI</h3>
+              <span class="badge badge-green">AI Tooling</span>
+            </div>
+            <p class="card-desc">Python tool bridging raw product data and specialised LLMs. Uses retailer-specific JSON configurations to parse large CSVs and extract only required product attributes, generating clean structured payloads custom-fit for different AI models — each trained to score assortment quality on a unique set of inputs.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Streamlit</span><span class="chip">JSON</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/datafetch_forLLM" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assortment Validator -->
+        <div class="card">
+          <div class="card-media">
+            <img src="images/project_demo_asst.gif" alt="Assortment Validator Demo">
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Automated Assortment Validator</h3>
+              <span class="badge badge-teal">Production</span>
+            </div>
+            <p class="card-desc">QA automation tool that validates the relevance of search results directly via API, ensuring product data matches required keywords and concepts. Reduced testing time by over 95% by automating a previously manual validation process.</p>
+            <div class="card-footer">
+              <div class="tech-chips">
+                <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Pandas</span><span class="chip">Requests</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/shhhetty/assortment_validator" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="container">
+      <p class="eyebrow">Get In Touch</p>
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-body">Actively seeking opportunities in Generative AI and AI automation. Open to discussing roles, projects, or collaborations.</p>
+      <div class="contact-links">
+        <a href="mailto:satvikshetty24@gmail.com" class="contact-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          satvikshetty24@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/shhhetty/" target="_blank" class="contact-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/shhhetty" target="_blank" class="contact-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/shhhetty/" target="_blank" class="contact-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Satvik Shetty · 2025</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+
+</body>
 </html>
